@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+@font-face {
+    font-family: "zmx";
+    src: url("/fonts/zmx-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.img-arrow-down::after {
+  content:'';
+  right: -12px;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  border-width: 5px 5px 0 5px;
+  border-color: white transparent transparent transparent;
+  border-style: solid;
+}
+
+.d-flex-center {
+  width: 95%;
+  margin:0 auto;
+}

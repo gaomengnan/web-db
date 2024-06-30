@@ -1,0 +1,51 @@
+<header class="bg-emDark py-3">
+  <div class="flex justify-between items-center align-middle d-flex-center">
+    <%!-- LOGO - TITLE --%>
+    <div class="flex justify-between items-center  gap-3">
+      <a href={~p"/"}>
+        <img src="/images/movie.png" alt="logo" class="h-8 w-auto" />
+      </a>
+      <a href={~p"/"}>
+        <div class="text-white font-brand font-bold text-1xl">
+          看你想看
+        </div>
+      </a>
+
+      <%!-- 搜索 --%>
+      <input
+        placeholder="搜索..."
+        type="text"
+        class="rounded-xl focus:outline-none focus:border-emLavender bg-emDark-dark py-1 px-3 text-white placeholder-emDark-light font-brand text-sm"
+      />
+
+      <%!--  BUTTON --%>
+      <%!-- <button class="text-1[rem] text-white font-brand">所有视频</button> --%>
+    </div>
+
+    <%!-- NAVIGATOR --%>
+    <%!-- <ul class="flex gap-3 font-brand text-1xl text-white"> --%>
+    <%!--   <li> --%>
+    <%!--     登录 --%>
+    <%!--   </li> --%>
+    <%!--   <li> --%>
+    <%!--     设置 --%>
+    <%!--   </li> --%>
+    <%!-- </ul> --%>
+
+    <%!-- 登陆头像  --%>
+    <div class="relative">
+      <button class="img-arrow-down">
+        <img src="/images/default-avatar.png" class="w-8 h-8" />
+      </button>
+
+      <%!-- drawdown --%>
+      <div class="absolute right-0 bg-white h-40 w-80  rounded-lg shadow-xl  border border-white">
+        <%= if @current_user do %>
+          Logout
+          Settings
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%!-- logo --%>
+</header>
