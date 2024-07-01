@@ -6,7 +6,7 @@ defmodule WebsiteDoubanWeb.UserRegistrationLive do
 
   def render(assigns) do
     ~H"""
-    <div class="h-1/2 w-1/2 max-w-xl  rounded-xl">
+    <div class="h-1/2 w-1/4 max-w-xl  rounded-xl">
       <.header class="text-center">
         注册
         <:subtitle>

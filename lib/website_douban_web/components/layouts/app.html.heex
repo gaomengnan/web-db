@@ -31,14 +31,44 @@
         </button>
 
         <%!-- drawdown --%>
-        <div class="absolute right-0 bg-white h-20 w-60  rounded-lg shadow-xl  border border-white">
-          <.link
-            href={~p"/users/log_out"}
-            method="delete"
-            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
-          >
-            退出
-          </.link>
+        <div class="absolute right-0 bg-white  w-60  rounded-lg shadow-xl  border border-white-100">
+          <div class="flex justify-start items-center gap-3 my-2">
+            <a class="ml-5">
+              <img src="/images/default-avatar.png" class="w-12 h-12" />
+            </a>
+            <div>
+              <span class="font-brand">
+                <%= @current_user.email %>
+              </span>
+            </div>
+          </div>
+
+          <div class="flex justify-start items-center gap-2 py-4  hover:bg-gray-100 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="currentColor"
+              role="none"
+              class="ml-5 text-gray-500 cursor-pointer"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18.586 13h-8.083c-.523 0-.947-.448-.947-1s.424-1 .947-1h8.083l-2.738-2.737a1 1 0 011.415-1.415l4.444 4.445a1 1 0 010 1.414l-4.444 4.445a1 1 0 01-1.415-1.415L18.586 13zM9 5H6a1 1 0 00-1 1v12a1 1 0 001 1h3a1 1 0 110 2H6a3 3 0 01-3-3V6a3 3 0 013-3h3a1 1 0 010 2z"
+                clip-rule="evenodd"
+                role="none"
+              >
+              </path>
+            </svg>
+            <.link
+              href={~p"/users/log_out"}
+              method="delete"
+              class="text-[1rem] leading-6 text-gray-500 font-brand"
+            >
+              退出
+            </.link>
+          </div>
         </div>
       </div>
     <% else %>
@@ -48,9 +78,6 @@
           <.link href={~p"/users/log_in"} class="leading-6 text-white  hover:text-emDark-light">
             登录
           </.link>
-        </li>
-        <li>
-          设置
         </li>
       </ul>
     <% end %>

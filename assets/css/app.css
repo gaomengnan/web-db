@@ -4,14 +4,14 @@
 
 /* This file is for your main application CSS */
 @font-face {
-    font-family: "zmx";
-    src: url("/fonts/zmx-Regular.ttf");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "zmx";
+  src: url("/fonts/zmx-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .img-arrow-down::after {
-  content:'';
+  content: '';
   right: -12px;
   top: 50%;
   position: absolute;
@@ -23,5 +23,11 @@
 
 .d-flex-center {
   width: 95%;
-  margin:0 auto;
+  margin: 0 auto;
+}
+
+
+.d-flex-center-80 {
+  width: 80%;
+  margin: 0 auto;
 }
