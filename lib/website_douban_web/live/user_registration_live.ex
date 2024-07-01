@@ -6,15 +6,15 @@ defmodule WebsiteDoubanWeb.UserRegistrationLive do
 
   def render(assigns) do
     ~H"""
-    <div class="mx-auto max-w-sm">
+    <div class="h-1/2 w-1/2 max-w-xl  rounded-xl">
       <.header class="text-center">
-        Register for an account
+        注册
         <:subtitle>
-          Already registered?
+          已经有账号?
           <.link navigate={~p"/users/log_in"} class="font-semibold text-brand hover:underline">
-            Log in
+            登录
           </.link>
-          to your account now.
+          你的账号现在.
         </:subtitle>
       </.header>
 
@@ -28,14 +28,14 @@ defmodule WebsiteDoubanWeb.UserRegistrationLive do
         method="post"
       >
         <.error :if={@check_errors}>
-          Oops, something went wrong! Please check the errors below.
+          糟糕，出了点问题！请查看下面的错误信息.
         </.error>
 
-        <.input field={@form[:email]} type="email" label="Email" required />
-        <.input field={@form[:password]} type="password" label="Password" required />
+        <.input field={@form[:email]} type="email" label="邮箱" required />
+        <.input field={@form[:password]} type="password" label="密码" required />
 
         <:actions>
-          <.button phx-disable-with="Creating account..." class="w-full">Create an account</.button>
+          <.button phx-disable-with="Creating account..." class="w-1/2 m-auto mb-5">创建</.button>
         </:actions>
       </.simple_form>
     </div>
