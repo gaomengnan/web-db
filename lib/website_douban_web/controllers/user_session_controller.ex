@@ -15,7 +15,7 @@ defmodule WebsiteDoubanWeb.UserSessionController do
   end
 
   def create(conn, params) do
-    create(conn, params, "Welcome back!")
+    create(conn, params, "欢迎回来!")
   end
 
   defp create(conn, %{"user" => user_params}, info) do
@@ -28,7 +28,7 @@ defmodule WebsiteDoubanWeb.UserSessionController do
     else
       # In order to prevent user enumeration attacks, don't disclose whether the email is registered.
       conn
-      |> put_flash(:error, "Invalid email or password")
+      |> put_flash(:error, "不正确的账号或者密码")
       |> put_flash(:email, String.slice(email, 0, 160))
       |> redirect(to: ~p"/users/log_in")
     end
@@ -36,7 +36,7 @@ defmodule WebsiteDoubanWeb.UserSessionController do
 
   def delete(conn, _params) do
     conn
-    |> put_flash(:info, "Logged out successfully.")
+    |> put_flash(:info, "退出成功.")
     |> UserAuth.log_out_user()
   end
 end
