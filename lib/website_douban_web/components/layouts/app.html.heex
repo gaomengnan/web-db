@@ -91,7 +91,20 @@
   </div>
   <%!-- logo --%>
 </header>
-<main class="font-brand flex justify-center align-middle items-center h-screen">
+<main class="font-brand flex justify-center align-middle items-center">
   <.flash_group flash={@flash} />
   <%= @inner_content %>
 </main>
+
+<%!-- FOOTER --%>
+<footer class="h-[120px] w-full flex justify-center text-white px-15 py-20">
+  <div class="w-full px-10">
+    <div class="border-t-[1px] border-gray w-full"></div>
+    <div class="flex items-center space-x-2 py-6">
+      <img src="/images/movie.png" alt="看你想看" class="h-8 w-8" />
+      <p class="font-brand text-gray-600 text-2xl">@ 2024 Gao</p>
+
+      <div></div>
+    </div>
+  </div>
+</footer>
