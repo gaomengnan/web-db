@@ -26,12 +26,19 @@
     <%= if @current_user do %>
       <%!-- 登陆头像  --%>
       <div class="relative">
-        <button class="img-arrow-down">
+        <button
+          class="img-arrow-down"
+          phx-click={WebsiteDoubanWeb.Layouts.App.toggle_dropdown_menu()}
+        >
           <img src="/images/default-avatar.png" class="w-8 h-8" />
         </button>
 
         <%!-- drawdown --%>
-        <div class="absolute right-0 bg-white  w-60  rounded-lg shadow-xl  border border-white-100">
+        <div
+          id="dropdown_menu"
+          phx-click-away={WebsiteDoubanWeb.Layouts.App.toggle_dropdown_menu()}
+          class="hidden dropdown-menu-arrow absolute right-0 bg-white  w-60  rounded-lg shadow-xl  border border-white-100"
+        >
           <div class="flex justify-start items-center gap-3 my-2">
             <a class="ml-5">
               <img src="/images/default-avatar.png" class="w-12 h-12" />

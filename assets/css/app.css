@@ -10,6 +10,16 @@
   font-style: normal;
 }
 
+.dropdown-menu-arrow::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: calc(95% - 12px);
+  border-width: 0 5px 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
 .img-arrow-down::after {
   content: '';
   right: -12px;
@@ -19,6 +29,7 @@
   border-width: 5px 5px 0 5px;
   border-color: white transparent transparent transparent;
   border-style: solid;
+  cursor: pointer;
 }
 
 .d-flex-center {
