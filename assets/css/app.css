@@ -42,3 +42,7 @@
   width: 80%;
   margin: 0 auto;
 }
+
+.main_container_item {
+  @apply bg-gray-200 p-40 rounded shadow
+}
