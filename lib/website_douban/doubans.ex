@@ -13,6 +13,24 @@ defmodule WebsiteDouban.Doubans do
 
   ## Examples
 
+  iex> list_douban_paginate()
+  [%Douban{}, ...]
+
+  """
+  def list_douban_paginate(params \\ %{}) do
+    defaults = %{"page" => 1, "page_size" => 20}
+    params = Map.merge(defaults, params)
+
+    Douban
+    |> order_by(asc: :rank)
+    |> Repo.paginate(params)
+  end
+
+  @doc """
+  Returns the list of douban.
+
+  ## Examples
+
       iex> list_douban()
       [%Douban{}, ...]
 

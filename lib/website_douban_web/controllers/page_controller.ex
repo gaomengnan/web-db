@@ -1,9 +1,10 @@
 defmodule WebsiteDoubanWeb.PageController do
   use WebsiteDoubanWeb, :controller
 
-  def home(conn, _params) do
-    # The home page is often custom made,
-    # so skip the default app layout.
-    render(conn, :home)
+  alias WebsiteDouban.Doubans
+
+  def home(conn, params) do
+    Doubans.list_douban_paginate(params)
+    render(conn, :home, name: "ok")
   end
 end
