@@ -10,6 +10,38 @@ defmodule WebsiteDoubanWeb.PageHTML do
 
   attr :rating, :integer
 
+  attr :page_number, :integer
+  attr :total_pages, :integer
+
+  def render_pagination(assigns) do
+    IO.inspect(assigns.page_number)
+    IO.inspect(assigns.total_pages)
+
+    # 1 2 3
+    # cond do
+    #   assigns.page_number == 1 do
+    #
+    #   end
+    # end
+
+    ~H"""
+    <div class="flex gap-1 justify-end mt-10 text-white">
+      <button class="text-black mr-3">上一页</button>
+
+      <button class="bg-blue-400 h-10 px-5 rounded">
+        1
+      </button>
+      <button class="bg-black h-10 px-5 rounded">
+        2
+      </button>
+      <button class="bg-black h-10 px-5 rounded">
+        3
+      </button>
+      <button class="text-black ml-3">下一页</button>
+    </div>
+    """
+  end
+
   def render_stars(assigns) do
     # IO.inspect(assigns.rating)
     score = assigns.rating
@@ -18,11 +50,6 @@ defmodule WebsiteDoubanWeb.PageHTML do
     full_stars = Kernel.trunc(score / 2)
     half_star = rem(Kernel.trunc(score * 10), 20) < 15
     empty_stars = 5 - full_stars - if(half_star, do: 1, else: 0)
-
-    IO.inspect(full_stars)
-    IO.inspect(half_star)
-    IO.inspect(empty_stars)
-
     assigns = assign(assigns, :full, full_stars)
     assigns = assign(assigns, :half, half_star)
     assigns = assign(assigns, :empty, empty_stars)

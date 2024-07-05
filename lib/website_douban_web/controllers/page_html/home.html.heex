@@ -33,9 +33,5 @@
     <% end %>
   </div>
 
-  <div>
-    <span>总共:<%= @page.total_entries %></span>
-    <span>当前页码<%= @page.page_number %></span>
-    <span>每页:<%= @page.page_size %></span>
-  </div>
+  <.render_pagination page_number={@page.page_number} total_pages={@page.total_pages} />
 </div>
