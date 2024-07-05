@@ -1,17 +1,41 @@
-<div class="mt-4">
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
-    <div class="main_container_item"><%= @name %></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
-    <div class="main_container_item"></div>
+<div>
+  <div class="grid grid-cols-1 md:grid-cols-1">
+    <%= for item <- @data do %>
+      <div class="main_container_item">
+        <span class="py-5 px-3 text-[#bbb]">
+          <%= item.rank %>
+        </span>
+        <div class="py-5 px-4">
+          <.link href="">
+            <img
+              class="inset-0 w-52 h-52 object-cover"
+              src={"data:image/jpeg;base64,#{item.resource.data}"}
+            />
+          </.link>
+        </div>
+        <div class="flex flex-col gap-2 text-sm py-4">
+          <.link href={item.url} target="__blank" class="text-blue-900 font-brand cursor-pointer">
+            <%= item.title %>
+          </.link>
+
+          <div class="flex gap-2">
+            <div>
+              <.render_stars rating={item.score} />
+            </div>
+            <span class="text-orange-700"><%= item.score %></span>
+            <span class="text-gray-500"><%= item.comment_count %>人评价</span>
+          </div>
+          <p class="quote my-5">
+            <span class="movie-desc text-[#666] text-xs m-5"><%= item.desc %></span>
+          </p>
+        </div>
+      </div>
+    <% end %>
   </div>
 
+  <div>
+    <span>总共:<%= @page.total_entries %></span>
+    <span>当前页码<%= @page.page_number %></span>
+    <span>每页:<%= @page.page_size %></span>
+  </div>
 </div>

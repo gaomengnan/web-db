@@ -4,7 +4,7 @@ defmodule WebsiteDoubanWeb.PageController do
   alias WebsiteDouban.Doubans
 
   def home(conn, params) do
-    Doubans.list_douban_paginate(params)
-    render(conn, :home, name: "ok")
+    page = Doubans.list_douban_paginate(params)
+    render(conn, :home, data: page.entries, page: page)
   end
 end

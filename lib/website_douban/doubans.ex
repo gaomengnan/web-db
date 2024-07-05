@@ -14,7 +14,7 @@ defmodule WebsiteDouban.Doubans do
   ## Examples
 
   iex> list_douban_paginate()
-  [%Douban{}, ...]
+  [%Scrivener.Page{}]
 
   """
   def list_douban_paginate(params \\ %{}) do
@@ -23,6 +23,7 @@ defmodule WebsiteDouban.Doubans do
 
     Douban
     |> order_by(asc: :rank)
+    |> preload(:resource)
     |> Repo.paginate(params)
   end
 

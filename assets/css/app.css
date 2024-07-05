@@ -44,5 +44,18 @@
 }
 
 .main_container_item {
-  @apply bg-gray-200 p-40 rounded shadow
+  @apply bg-white p-1 flex align-middle gap-1 font-brand border-b border-dashed  border-b-gray-400
+}
+
+.quote {
+  overflow: hidden;
+  width: auto;
+  /*margin-right: 13px;*/
+  background: url("/images/Quotel.png") no-repeat left 0px;
+  /*display: inline-block;*/
+}
+
+.movie-desc {
+  background: url("/images/Quoter.png") no-repeat right bottom;
+  /*display: inline-block;*/
 }

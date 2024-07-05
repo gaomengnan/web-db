@@ -8,6 +8,9 @@ defmodule WebsiteDouban.Doubans.Douban do
     field(:comment_count, :integer)
     field(:cover, :string)
     field(:desc, :string)
+    field(:title, :string)
+    field(:url, :string)
+    belongs_to(:resource, WebsiteDouban.Resource)
   end
 
   # 定义 changest
@@ -15,5 +18,6 @@ defmodule WebsiteDouban.Doubans.Douban do
     attrs
     |> cast(params, [:title, :url, :rank, :score, :comment_count, :cover, :desc, :movie_id])
     |> validate_required([:title, :url, :rank, :score, :comment_count, :cover, :desc, :movie_id])
+    |> foreign_key_constraint(:resource_id)
   end
 end
